@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>RecipeFavorites</AssemblyName>
+    <RootNamespace>RecipeFavorites</RootNamespace>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <!-- Vintage Story oyun klasörünü gösteren VINTAGE_STORY ortam değişkenini kullanır. -->
+    <VintagestoryDir Condition="'$(VINTAGE_STORY)' != ''">$(VINTAGE_STORY)</VintagestoryDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Oyunun kendi DLL'lerine referans - derleme (build) sırasında değişmez, oyuna kopyalanmaz -->
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(VintagestoryDir)/VintagestoryAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VintagestoryLib">
+      <HintPath>$(VintagestoryDir)/VintagestoryLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSEssentialsMod">
+      <HintPath>$(VintagestoryDir)/Mods/VSEssentials.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>$(VintagestoryDir)/Mods/VSSurvivalMod.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(VintagestoryDir)/Lib/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(VintagestoryDir)/Lib/Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="modinfo.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

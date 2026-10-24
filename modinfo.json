@@ -1,0 +1,13 @@
+{
+  "type": "code",
+  "modid": "recipefavorites",
+  "name": "Recipe Favorites",
+  "version": "1.0.3",
+  "networkVersion": "1.0.0",
+  "textureSize": 32,
+  "description": "El kitabındaki (handbook) tarifleri ve eşyaları favorileyip hızlıca bulmanızı sağlar.",
+  "authors": [ "Yasin" ],
+  "dependencies": {
+    "game": "1.22.0"
+  }
+}
